@@ -16,6 +16,7 @@ function Question() {
 
     const { setScore } = useContext(ScoreContext);
     const { setChosenAnswers } = useContext(ChosenAnswersContext);
+    const [answerIsVisible, setAnswerIsVisible] = useState(false);
 
     useEffect(() => {
         if (questionIndex === -1) {
@@ -50,8 +51,6 @@ function Question() {
         setAnswerIsVisible(false);
         setQuestionIndex((previousIndex) => previousIndex + 1);
     };
-
-    const [answerIsVisible, setAnswerIsVisible] = useState(true);
 
     return (
         <>
