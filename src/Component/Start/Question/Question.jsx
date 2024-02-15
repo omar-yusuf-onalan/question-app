@@ -1,3 +1,4 @@
+import "./Question.style.css"
 import { useContext, useState } from "react";
 import QuestionIsVisibleContext from "../../../Context/QuestionIsVisibleContext";
 import questions from "../../../questions";
