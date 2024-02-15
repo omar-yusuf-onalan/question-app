@@ -36,6 +36,7 @@ function Question() {
 
         const timeUpTimer = setTimeout(() => {
             setQuestionIndex((previousIndex) => previousIndex + 1);
+            setAnswerIsVisible(false);
         }, 30000);
 
         return () => {
