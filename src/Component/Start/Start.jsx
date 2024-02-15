@@ -1,12 +1,17 @@
 import { useContext } from "react";
 import "./Start.style.css";
 import StartIsVisibleContext from "../../Context/StartIsVisibleContext";
+import QuestionIsVisibleContext from "../../Context/QuestionIsVisibleContext";
 
 function Start() {
-    const { startIsVisible, setStartIsVisible } = useContext(StartIsVisibleContext);
+    const { startIsVisible, setStartIsVisible } = useContext(
+        StartIsVisibleContext
+    );
+    const { setQuestionIsVisible } = useContext(QuestionIsVisibleContext);
 
     function handleClick() {
         setStartIsVisible(false);
+        setQuestionIsVisible(true);
     }
 
     return (
