@@ -1,8 +1,10 @@
-import "./Question.style.css"
+import "./Question.style.css";
 import { useContext, useState } from "react";
 import QuestionIsVisibleContext from "../../../Context/QuestionIsVisibleContext";
 import questions from "../../../questions";
 import QuestionIndexContext from "../../../Context/QuestionIndexContext";
+import ChosenAnswersContext from "../../../Context/ChosenAnswersContext";
+import ScoreContext from "../../../Context/ScoreContext";
 
 function Question() {
     const { questionIsVisible, setQuestionIsVisible } = useContext(
@@ -12,9 +14,20 @@ function Question() {
     const { questionIndex, setQuestionIndex } =
         useContext(QuestionIndexContext);
 
-    const handleAnswer = (selectedAnswer) => {};
+    const { setScore } = useContext(ScoreContext);
+    const { setChosenAnswers } = useContext(ChosenAnswersContext);
 
-    const [answerIsVisible, setAnswerIsVisible] = useState(false);
+    const handleAnswer = (selectedAnswer) => {
+        if (selectedAnswer === questions[questionIndex].answer) {
+            setScore((previousScore) => previousScore + 1);
+        }
+
+        setChosenAnswers((previousArray) => [...previousArray, selectedAnswer]);
+        setAnswerIsVisible(false);
+        setQuestionIndex((previousIndex) => previousIndex + 1);
+    };
+
+    const [answerIsVisible, setAnswerIsVisible] = useState(true);
 
     return (
         <>
