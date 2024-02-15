@@ -1,12 +1,12 @@
-import './App.css'
+import "./App.css";
+import Start from "./Component/Start/Start";
 
 function App() {
-
-  return (
-    <>
-      
-    </>
-  )
+    return (
+        <>
+            <Start></Start>
+        </>
+    );
 }
 
-export default App
+export default App;
