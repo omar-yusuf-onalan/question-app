@@ -2,6 +2,7 @@ import { useState } from "react";
 import StartIsVisibleContext from "./StartIsVisibleContext";
 import QuestionIsVisibleContext from "./QuestionIsVisibleContext";
 import QuestionIndexContext from "./QuestionIndexContext";
+import ChosenAnswersContext from "./ChosenAnswersContext";
 
 // eslint-disable-next-line react/prop-types
 function MainContextProvider({ children }) {
@@ -26,11 +27,20 @@ function MainContextProvider({ children }) {
         setQuestionIndex,
     };
 
+    const [chosenAnswers, setChosenAnswers] = useState([]);
+
+    const chosenAnswersState = {
+        chosenAnswers,
+        setChosenAnswers,
+    };
+
     return (
         <StartIsVisibleContext.Provider value={startIsVisibleState}>
             <QuestionIsVisibleContext.Provider value={questionIsVisibleState}>
                 <QuestionIndexContext.Provider value={questionIndexState}>
-                    {children}
+                    <ChosenAnswersContext.Provider value={chosenAnswersState}>
+                        {children}
+                    </ChosenAnswersContext.Provider>
                 </QuestionIndexContext.Provider>
             </QuestionIsVisibleContext.Provider>
         </StartIsVisibleContext.Provider>
