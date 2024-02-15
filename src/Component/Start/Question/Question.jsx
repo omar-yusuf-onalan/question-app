@@ -10,12 +10,11 @@ function Question() {
     const { questionIsVisible, setQuestionIsVisible } = useContext(
         QuestionIsVisibleContext
     );
-
     const { questionIndex, setQuestionIndex } =
         useContext(QuestionIndexContext);
-
     const { setScore } = useContext(ScoreContext);
     const { setChosenAnswers } = useContext(ChosenAnswersContext);
+
     const [answerIsVisible, setAnswerIsVisible] = useState(false);
 
     useEffect(() => {
@@ -30,7 +29,7 @@ function Question() {
 
         const timer = setTimeout(() => {
             setAnswerIsVisible(true);
-        }, 10);
+        }, 10000);
 
         const timeUpTimer = setTimeout(() => {
             setQuestionIndex((previousIndex) => previousIndex + 1);
