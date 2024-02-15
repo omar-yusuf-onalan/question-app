@@ -1,6 +1,7 @@
 import { useState } from "react";
 import StartIsVisibleContext from "./StartIsVisibleContext";
 import QuestionIsVisibleContext from "./QuestionIsVisibleContext";
+import QuestionIndexContext from "./QuestionIndexContext";
 
 // eslint-disable-next-line react/prop-types
 function MainContextProvider({ children }) {
@@ -18,10 +19,19 @@ function MainContextProvider({ children }) {
         setQuestionIsVisible,
     };
 
+    const [questionIndex, setQuestionIndex] = useState(-1);
+
+    const questionIndexState = {
+        questionIndex,
+        setQuestionIndex,
+    };
+
     return (
         <StartIsVisibleContext.Provider value={startIsVisibleState}>
             <QuestionIsVisibleContext.Provider value={questionIsVisibleState}>
-                {children}
+                <QuestionIndexContext.Provider value={questionIndexState}>
+                    {children}
+                </QuestionIndexContext.Provider>
             </QuestionIsVisibleContext.Provider>
         </StartIsVisibleContext.Provider>
     );
