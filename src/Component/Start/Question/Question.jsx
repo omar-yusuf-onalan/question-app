@@ -1,5 +1,5 @@
 import "./Question.style.css";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import QuestionIsVisibleContext from "../../../Context/QuestionIsVisibleContext";
 import questions from "../../../questions";
 import QuestionIndexContext from "../../../Context/QuestionIndexContext";
@@ -16,6 +16,30 @@ function Question() {
 
     const { setScore } = useContext(ScoreContext);
     const { setChosenAnswers } = useContext(ChosenAnswersContext);
+
+    useEffect(() => {
+        if (questionIndex === -1) {
+            return () => {};
+        }
+
+        if (questionIndex === questions.length) {
+            setQuestionIsVisible(false);
+            return () => {};
+        }
+
+        const timer = setTimeout(() => {
+            setAnswerIsVisible(true);
+        }, 10);
+
+        const timeUpTimer = setTimeout(() => {
+            setQuestionIndex((previousIndex) => previousIndex + 1);
+        }, 30000);
+
+        return () => {
+            clearTimeout(timer);
+            clearTimeout(timeUpTimer);
+        };
+    }, [questionIndex, setQuestionIndex, setQuestionIsVisible]);
 
     const handleAnswer = (selectedAnswer) => {
         if (selectedAnswer === questions[questionIndex].answer) {
