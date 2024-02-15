@@ -32,7 +32,7 @@ function Question() {
 
         const timer = setTimeout(() => {
             setAnswerIsVisible(true);
-        }, 10);
+        }, 10000);
 
         const timeUpTimer = setTimeout(() => {
             setQuestionIndex((previousIndex) => previousIndex + 1);
