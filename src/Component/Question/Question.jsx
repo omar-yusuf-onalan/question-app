@@ -42,7 +42,7 @@ function Question() {
             clearTimeout(timer);
             clearTimeout(timeUpTimer);
         };
-    }, [questionIndex, setQuestionIndex, setQuestionIsVisible]);
+    }, [questionIndex, setQuestionIndex, setQuestionIsVisible, setResultIsVisible]);
 
     const handleAnswer = (selectedAnswer) => {
         if (selectedAnswer === questions[questionIndex].answer) {
