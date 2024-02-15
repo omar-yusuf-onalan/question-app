@@ -1,5 +1,5 @@
 import "./App.css";
-import Question from "./Component/Start/Question/Question";
+import Question from "./Component/Question/Question";
 import Start from "./Component/Start/Start";
 import MainContextProvider from "./Context/MainContextProvider";
 

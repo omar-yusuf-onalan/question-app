@@ -1,10 +1,10 @@
 import "./Question.style.css";
 import { useContext, useEffect, useState } from "react";
-import QuestionIsVisibleContext from "../../../Context/QuestionIsVisibleContext";
-import questions from "../../../questions";
-import QuestionIndexContext from "../../../Context/QuestionIndexContext";
-import ChosenAnswersContext from "../../../Context/ChosenAnswersContext";
-import ScoreContext from "../../../Context/ScoreContext";
+import QuestionIsVisibleContext from "../../Context/QuestionIsVisibleContext";
+import questions from "../../questions";
+import QuestionIndexContext from "../../Context/QuestionIndexContext";
+import ChosenAnswersContext from "../../Context/ChosenAnswersContext";
+import ScoreContext from "../../Context/ScoreContext";
 
 function Question() {
     const { questionIsVisible, setQuestionIsVisible } = useContext(
