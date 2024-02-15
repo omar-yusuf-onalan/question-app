@@ -5,6 +5,7 @@ import questions from "../../questions";
 import QuestionIndexContext from "../../Context/QuestionIndexContext";
 import ChosenAnswersContext from "../../Context/ChosenAnswersContext";
 import ScoreContext from "../../Context/ScoreContext";
+import ResultIsVisibleContext from "../../Context/ResultIsVisibleContext";
 
 function Question() {
     const { questionIsVisible, setQuestionIsVisible } = useContext(
@@ -14,6 +15,7 @@ function Question() {
         useContext(QuestionIndexContext);
     const { setScore } = useContext(ScoreContext);
     const { setChosenAnswers } = useContext(ChosenAnswersContext);
+    const { setResultIsVisible } = useContext(ResultIsVisibleContext);
 
     const [answerIsVisible, setAnswerIsVisible] = useState(false);
 
@@ -24,12 +26,13 @@ function Question() {
 
         if (questionIndex === questions.length) {
             setQuestionIsVisible(false);
+            setResultIsVisible(true);
             return () => {};
         }
 
         const timer = setTimeout(() => {
             setAnswerIsVisible(true);
-        }, 10000);
+        }, 10);
 
         const timeUpTimer = setTimeout(() => {
             setQuestionIndex((previousIndex) => previousIndex + 1);
