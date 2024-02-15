@@ -43,9 +43,7 @@ function MainContextProvider({ children }) {
         setScore,
     };
 
-    const [resultIsVisible, setResultIsVisible] = useContext(
-        ResultIsVisibleContext
-    );
+    const [resultIsVisible, setResultIsVisible] = useState(false);
 
     const resultIsVisibleState = {
         resultIsVisible,
@@ -58,7 +56,9 @@ function MainContextProvider({ children }) {
                 <QuestionIndexContext.Provider value={questionIndexState}>
                     <ChosenAnswersContext.Provider value={chosenAnswersState}>
                         <ScoreContext.Provider value={scoreState}>
-                            <ResultIsVisibleContext.Provider value={resultIsVisibleState}>
+                            <ResultIsVisibleContext.Provider
+                                value={resultIsVisibleState}
+                            >
                                 {children}
                             </ResultIsVisibleContext.Provider>
                         </ScoreContext.Provider>
