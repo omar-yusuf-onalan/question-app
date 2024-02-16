@@ -7,6 +7,8 @@
     border: 2px solid #00cc44;
     padding: 20px;
     margin: 20px;
+    height: 400px;
+    width: 700px;
 }
 
 .start-component button {
