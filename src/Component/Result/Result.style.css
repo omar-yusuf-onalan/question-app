@@ -1,0 +1,15 @@
+.result-component {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #e6ffe6;
+    border: 2px solid #00cc44;
+    padding: 20px;
+    margin: 20px;
+}
+
+.result-component div {
+    color: #009933;
+    margin-bottom: 10px;
+}

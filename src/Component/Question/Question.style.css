@@ -3,4 +3,25 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #e6ffe6;
+    border: 2px solid #00cc44;
+    padding: 20px;
+    margin: 20px;
+}
+
+.question-component img {
+    height: 500px;
+}
+
+.question-component button {
+    background-color: #00cc44;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.question-component button:hover {
+    background-color: #009933;
 }

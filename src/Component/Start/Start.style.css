@@ -3,8 +3,21 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #e6ffe6;
+    border: 2px solid #00cc44;
+    padding: 20px;
+    margin: 20px;
 }
 
 .start-component button {
-    width: 100px;
+    background-color: #00cc44;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.start-component button:hover {
+    background-color: #009933;
 }
