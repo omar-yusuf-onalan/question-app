@@ -1,4 +1,4 @@
-import cinseddi from "src/assets/cin-seddi.jpg";
+import cinseddi from "../src/assets/cin-seddi.jpg"
 
 
 
